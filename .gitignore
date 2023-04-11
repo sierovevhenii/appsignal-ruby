@@ -32,3 +32,4 @@ ext/*.o
 ext/*.so
 ext/*.report
 pkg/
+.idea

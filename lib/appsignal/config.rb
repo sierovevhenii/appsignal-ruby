@@ -392,7 +392,7 @@ module Appsignal
       return if !config_file || !File.exist?(config_file)
 
       read_options = YAML::VERSION >= "4.0.0" ? { :aliases => true } : {}
-      configurations = YAML.load(ERB.new(IO.read(config_file)).result, **read_options)
+      configurations = YAML.load_file(config_file)
       config_for_this_env = configurations[env]
       if config_for_this_env
         config_for_this_env.each_with_object({}) do |(key, value), hash|
